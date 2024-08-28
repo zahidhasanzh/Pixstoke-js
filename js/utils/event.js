@@ -1,6 +1,8 @@
 /**
- * @copyright codewithsadee 2023
- * @author sadee <codewithsadee@gmail.com>
+ * @copyright Zahid Hassan 2024
  */
+"use strict"; 
 
-"use strict";
+ export const eaddEventOnElement = function($elements, eventType, callback){
+    $elements.forEach($element => $element.addEventListener(eventType, callback))
+}

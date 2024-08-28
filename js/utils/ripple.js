@@ -8,7 +8,6 @@
 export const ripple = function($rippleElem){
     $rippleElem.addEventListener("pointerdown", function(e){
         e.stopImmediatePropagation()
-        console.log(e);
 
         const $ripple = document.createElement("div");
         $ripple.classList.add("ripple");

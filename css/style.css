@@ -575,6 +575,7 @@ button:disabled{
  */
 .list {
   padding-block: 8px;
+  margin-inline: 16px;
 }
 .list-item{
   display: flex;
