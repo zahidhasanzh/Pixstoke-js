@@ -6,6 +6,7 @@
 
 // import
 import { ripple } from "./utils/ripple.js";
+import { eaddEventOnElement } from "./utils/event.js"
 
 // Header on-scroll state
 
@@ -20,7 +21,20 @@ window.addEventListener("scroll", () => {
 
 const $rippleElems = document.querySelectorAll("[data-ripple]");
 
-$rippleElems.forEach($rippleElem => ripple($rippleElem))
+$rippleElems.forEach($rippleElem => ripple($rippleElem));
+
+/**
+ * navbar toggler for mobile screen
+ */
+
+const $navToggler = document.querySelectorAll("[data-nav-toggler]");
+const $navbar = document.querySelector("[data-navigation]");
+const $scrim = document.querySelector("[data-scrim]");
+
+eaddEventOnElement($navToggler, "click", function(){
+    $navbar.classList.toggle("show");
+    $scrim.classList.toggle("active");
+})
 
 /**
  * filter functionality

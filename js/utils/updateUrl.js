@@ -14,6 +14,7 @@ export const updateUrl = (filterObj, searchType) => {
         const searchQuery = urlEncode(filterObj);
 
          window.location = `${root}/pages/${searchType}/${searchType}.html?${searchQuery}`;
+        
        
      }, 500)
 }
