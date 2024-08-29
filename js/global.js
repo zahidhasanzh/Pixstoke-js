@@ -40,4 +40,15 @@ eaddEventOnElement($navToggler, "click", function(){
  * filter functionality
  */
 
-window.filterObj = {}
+window.filterObj = {};
+
+//initial favorite object in local storage
+
+if(!window.localStorage.getItem("favorite")){
+    const favoriteObj = {
+        photos: {},
+        videos: {}
+    }
+
+    window.localStorage.setItem("favorite", JSON.stringify(favoriteObj))
+}

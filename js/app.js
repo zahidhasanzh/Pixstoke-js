@@ -14,6 +14,7 @@ $photoGrid.innerHTML = `<div class="skeleton"></div>`.repeat(18)
 
 client.photos.curated({page: 1, per_page: 20}, data => {
     $photoGrid.innerHTML = "";
+    
 
    data.photos.forEach(photo => {
     const $photoCard  = photoCard(photo)

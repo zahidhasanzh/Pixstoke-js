@@ -49,7 +49,7 @@ export const client = {
 
         //get single photo detail
         detail(id, callback){
-            fetchData(`${root.default}photos/$${id}`, callback)
+            fetchData(`${root.default}photos/${id}`, callback)
         }
     },
     videos: {
