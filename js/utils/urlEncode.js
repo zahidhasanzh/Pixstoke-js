@@ -10,9 +10,5 @@ export const urlEncode = urlObj => {
     return Object.entries(urlObj).join("&").replace(/,/g, "=").replace(/#/g, "%23");
 } 
 
-let arr = ["apple", "orange", "mango"]
-let newArray = Object.entries(arr).join("&").replace(/,/g, "=").replace(/#/g, "%23")
-
-console.log(newArray);
 
 

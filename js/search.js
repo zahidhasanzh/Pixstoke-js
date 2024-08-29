@@ -103,5 +103,3 @@ for(let i = 0; i < historyLen & i <= 5; i++){
     $searchList.appendChild($listItem)
 }
 
-
-console.log(searchHistory);
