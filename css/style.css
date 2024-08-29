@@ -453,7 +453,7 @@ button:disabled{
   gap: var(--column-gap);
 
   /* for javascript */
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .img-cover{
   width: 100%;
@@ -1046,7 +1046,9 @@ button:disabled{
 /*-----------------------------------*\
   #CURATED PHOTOS & POPULAR VIDEO
 \*-----------------------------------*/
-
+:where(.featured-photo, .popular-videos) .column{
+  margin-block-end: -800px;
+}
 
 
 

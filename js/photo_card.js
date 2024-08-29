@@ -13,8 +13,7 @@ import { favorite } from "./favorite.js";
 
 export const photoCard = photo => {
     const root = window.location.origin;
-    console.log(photo);
-
+   
     const {
         alt,
         avg_color: backdropColor,
