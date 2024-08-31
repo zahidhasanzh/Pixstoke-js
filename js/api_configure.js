@@ -65,7 +65,7 @@ export const client = {
 
         //get single videos detail
         detail(id, callback){
-            fetchData(`${root.videos}videos/$${id}`, callback)
+            fetchData(`${root.videos}videos/${id}`, callback)
         }
     },
      collections: {
@@ -79,7 +79,6 @@ export const client = {
         //get a collection medias and parameters Url object
         detail(id, parameters, callback){
             requestUrl = `${root.default}/collections/${id}?${urlEncode(parameters)}`;
-            fetchData(`${root.default}photos/$${id}`, callback);
             fetchData(requestUrl, callback)
         }
     },
