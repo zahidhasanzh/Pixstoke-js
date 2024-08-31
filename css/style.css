@@ -1072,7 +1072,7 @@ button:disabled{
 /*-----------------------------------*\
   #CURATED PHOTOS & POPULAR VIDEO
 \*-----------------------------------*/
-:where(.featured-photo, .popular-videos) .column{
+:where(.featured-photo, .popular-video) .column{
   margin-block-end: -800px;
 }
 
