@@ -8,6 +8,7 @@ import { ripple } from "./utils/ripple.js";
 import { eaddEventOnElement } from "./utils/event.js";
 import { segment } from "./segment_btn.js";
 import { updateUrl } from "./utils/updateUrl.js";
+import { urlDecode } from "./utils/urlDecode.js"
 
 const $searchTogglers = document.querySelectorAll("[data-search-toggler]");
 const $searchView = document.querySelector("[data-search-view]");
@@ -102,4 +103,8 @@ for(let i = 0; i < historyLen & i <= 5; i++){
 
     $searchList.appendChild($listItem)
 }
+//show search value in search field after reload
 
+const search = urlDecode(window.location.search.slice(1))
+
+if(search.query) $searchField.value = search.query;

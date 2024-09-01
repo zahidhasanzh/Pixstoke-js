@@ -1,6 +1,12 @@
 /**
-* @copyright codewithsadee 2023
-* @author sadee <codewithsadee@gmail.com>
-*/
+ * @copyright Zahid Hassan 2024
+ */
+
 
 "use strict";
+
+//convert url to object
+export const urlDecode = urlString => {
+    return Object.fromEntries(urlString.replace(/%23/g, "#").replace(/%20/g, " ").split("&").map(i => i.split("=")))
+}
+
