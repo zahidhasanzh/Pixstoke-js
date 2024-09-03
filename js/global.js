@@ -7,6 +7,7 @@
 // import
 import { ripple } from "./utils/ripple.js";
 import { eaddEventOnElement } from "./utils/event.js"
+import { urlDecode } from "./utils/urlDecode.js";
 
 // Header on-scroll state
 
@@ -42,6 +43,28 @@ eaddEventOnElement($navToggler, "click", function(){
 
 window.filterObj = {};
 
+// show all filtered option after reload
+
+if(window.location.search.slice(1)){
+  const search = urlDecode(window.location.search.slice(1))
+  console.log(search);
+  console.log(Object.entries(search));
+  Object.entries(search).forEach(item => {
+    const filterKey = item[0]
+    console.log(filterKey);
+    const filterValue = item[1]
+    console.log(filterValue);
+
+    window.filterObj[filterKey] = filterValue;
+    if(filterKey !== "query"){
+       const $filterItem = document.querySelector(`[data-filter="${filterKey}"]`);
+       $filterItem?.querySelector("[data-filter-chip]").classList.add("selected");
+
+       if($filterItem) $filterItem.querySelector("[data-filter-value]").innerText = filterValue;
+    }
+  })
+}
+
 //initial favorite object in local storage
 
 if(!window.localStorage.getItem("favorite")){
@@ -52,3 +75,12 @@ if(!window.localStorage.getItem("favorite")){
 
     window.localStorage.setItem("favorite", JSON.stringify(favoriteObj))
 }
+
+//page transition
+
+window.addEventListener("loadstart", function(){
+   document.body.style.opacity = "0"
+})
+window.addEventListener("DOMContentLoaded", function(){
+   document.body.style.opacity = "1"
+})

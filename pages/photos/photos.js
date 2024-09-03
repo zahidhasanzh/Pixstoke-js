@@ -9,6 +9,7 @@ import { gridInit , updateGrid} from "../../js/utils/masonry_grid.js"
 import { photoCard } from "../../js/photo_card.js";
 import { updateUrl } from "../../js/utils/updateUrl.js";
 import { urlDecode } from "../../js/utils/urlDecode.js";
+import { filter } from "../../js/filter.js"
 
 
 //show filter bar if search anything
@@ -16,6 +17,17 @@ import { urlDecode } from "../../js/utils/urlDecode.js";
 const $filterBar = document.querySelector("[data-filter-bar]");
 
 $filterBar.style.display = window.location.search ? "flex" : "none";
+
+//init filter
+const $filterWrappers = document.querySelectorAll("[data-filter]");
+
+    $filterWrappers.forEach($filterWrapper => {
+        filter($filterWrapper, window.filterObj, (newObj) => {
+
+            window.filterObj = newObj;
+            updateUrl(newObj, "photos");
+        })
+    })
 
 /**
  * render curated or searched photos
@@ -75,3 +87,5 @@ window.addEventListener("scroll", function(){
         isloaded = false
     }
 })
+
+

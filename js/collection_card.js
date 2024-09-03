@@ -11,8 +11,6 @@ import { ripple } from "./utils/ripple.js";
 export const collectionCard = collection => {
   const  root = window.location.origin;
 
-    console.log(collection);
-
     const {
         id,
         title,
