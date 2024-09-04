@@ -47,13 +47,9 @@ window.filterObj = {};
 
 if(window.location.search.slice(1)){
   const search = urlDecode(window.location.search.slice(1))
-  console.log(search);
-  console.log(Object.entries(search));
   Object.entries(search).forEach(item => {
     const filterKey = item[0]
-    console.log(filterKey);
     const filterValue = item[1]
-    console.log(filterValue);
 
     window.filterObj[filterKey] = filterValue;
     if(filterKey !== "query"){
